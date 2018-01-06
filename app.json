@@ -1,5 +1,25 @@
 {
   "expo": {
-    "sdkVersion": "23.0.0"
+    "sdkVersion": "23.0.0",
+    "name": "FlashCards",
+    "description": "题卡应用",
+    "slug": "flashcards",
+    "platforms": ["ios", "android"],
+    "icon": "./assets/images/icon.png",
+    "orientation": "portrait",
+    "version": "0.0.1",
+    "githubUrl": "https://github.com/zhougonglai/mobile-flashcards.git",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.abc360.flashcards"
+    },
+    "android": {
+      "package": "com.abc360.flashcards"
+    }
   }
 }

@@ -6,13 +6,22 @@ import {connect} from 'react-redux';
 
 import AppStatusBar from './pure/AppStatusBar';
 import DeckCard from './pure/DeckCard';
-import {blue} from '../utils/colors';
+import {fentchResults} from '../utils/api';
+import {addDeck} from '../actions';
 
 class DeckCards extends React.Component {
+
+  componentDidMount () {
+    fentchResults()
+    .then(decks => {
+      this.props.dispatch(addDeck(decks));
+    })
+  }
+
   render() {
     return (
       <View style={{flex: 1}}>
-        <AppStatusBar backgroundColor={blue} barStyle="light-content"/>
+        <AppStatusBar backgroundColor={'transparent'} barStyle={'default'}/>
         <ScrollView style={{flex: 1}}>
           {
             Object.values(this.props.decks).map(deck =>
