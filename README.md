@@ -50,10 +50,10 @@ src
 
 ![ Deck Card '题卡'](./screenshort/IMG_3810.PNG)
 
-![ Add Deck '添加题卡'](./screenshort/IMG_3811.png)
+![ Add Deck '添加题卡'](./screenshort/IMG_3811.PNG)
 
-![ Deck Detail '题卡详情'](./screenshort/img_3813.png)
+![ Deck Detail '题卡详情'](./screenshort/IMG_3813.PNG)
 
-![ Add Card '添加题卡'](./screenshort/img_3814.png)
+![ Add Card '添加题卡'](./screenshort/IMG_3814.PNG)
 
-![Quizs '答题'](./screenshort/img_3815.png)
+![Quizs '答题'](./screenshort/IMG_3815.PNG)
