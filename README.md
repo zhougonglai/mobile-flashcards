@@ -48,7 +48,7 @@ src
 
 ### screen short
 
-![ Deck Card '题卡'](./screenshort/IMG_3810.png)
+![ Deck Card '题卡'](./screenshort/IMG_3810.PNG)
 
 ![ Add Deck '添加题卡'](./screenshort/IMG_3811.png)
 
