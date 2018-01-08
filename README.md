@@ -45,3 +45,15 @@ src
     ├── colors.js                 #颜色
     └── constant.js               #常量
 ```
+
+### screen short
+
+![ Deck Card '题卡'](./screenshort/IMG_3810.png)
+
+![ Add Deck '添加题卡'](./screenshort/IMG_3811.png)
+
+![ Deck Detail '题卡详情'](./screenshort/img_3813.png)
+
+![ Add Card '添加题卡'](./screenshort/img_3814.png)
+
+![Quizs '答题'](./screenshort/img_3815.png)
