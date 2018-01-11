@@ -5,7 +5,7 @@
     "description": "题卡应用",
     "slug": "flashcards",
     "platforms": ["ios", "android"],
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/qq.png",
     "orientation": "portrait",
     "version": "0.0.1",
     "githubUrl": "https://github.com/zhougonglai/mobile-flashcards.git",

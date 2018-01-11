@@ -67,19 +67,18 @@ export const setNotification = () =>
       .then(({status}) => {
         if(status === 'granted') {
           Notifications.cancelAllScheduledNotificationsAsync()
-          .then(() => {
-            let tomorrow = new Date();
-            tomorrow.setDate(tomorrow.getDate() + 1);
-            tomorrow.setHours(20);
-            tomorrow.setMinutes(0);
 
-            Notifications.scheduleLocalNotificationAsync(createNotification,{
-              time: tomorrow,
-              repeat: 'day'
-            }).then(notifyID => {
-              AsyncStorage.setItem(NOTIFICATION_KEY, notifyID);
-            });
-          })
+          let tomorrow = new Date();
+          tomorrow.setDate(tomorrow.getDate() + 1);
+          tomorrow.setHours(20);
+          tomorrow.setMinutes(0);
+
+          Notifications.scheduleLocalNotificationAsync(createNotification(),{
+            time: tomorrow,
+            repeat: 'day'
+          }).then(notifyID => {
+            AsyncStorage.setItem(NOTIFICATION_KEY, notifyID);
+          });
         }
       })
     }

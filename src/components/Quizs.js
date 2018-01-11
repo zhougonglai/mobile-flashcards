@@ -114,9 +114,10 @@ class Quizs extends React.Component {
                 <Text style={{textAlign: 'center'}}> 
                   完成答题 
                 </Text>
+                {deck.questions.length > 0 &&
                 <Text style={[styles.incorrect, {textAlign: 'center'}]}> 
                   答对: {results.filter(result => result).length} 题, 正确率: {(results.filter(result => result).length / deck.questions.length).toFixed(4)*100} %
-                </Text>
+                </Text>}
               </View>
             }
         </View>
