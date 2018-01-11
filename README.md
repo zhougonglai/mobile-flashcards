@@ -3,6 +3,8 @@
 > made by craete-react-native-app
 
 ```bash
+# 安装依赖
+npm install
 
 # 启动service
 npm start

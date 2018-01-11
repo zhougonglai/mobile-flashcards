@@ -1,5 +1,7 @@
 export const DECKS_STORAGE_KEY = 'Flashcards:decks';
 
+export const NOTIFICATION_KEY = 'Flashcards:notification';
+
 export const InitialState = {
   React: {
     title: 'React',

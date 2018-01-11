@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, StyleSheet, Platform, Alert} from 'react-native';
+import {Text, View, StyleSheet, Platform, Alert, Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback} from 'react-native';
 import {connect} from 'react-redux';
 import TextareaItem from 'antd-mobile/lib/textarea-item';
 import List from 'antd-mobile/lib/list';
@@ -28,12 +28,13 @@ class AddCard extends React.Component {
 
   submit = () => {
     const {question, answer} = this.state;
-    if (question.length < 9 || answer.length < 3) {
+    if (question.trim().length < 9 || answer.trim().length < 3) {
       Alert.alert('提示','问题或答案描述不清!');
     } else {
-      this.props.dispatch(actions.addCard(this.props.deck, {question, answer}));
+      const deck = {question: question.trim(), answer: answer.trim()};
+      this.props.dispatch(actions.addCard(this.props.deck, deck));
       this.props.navigation.goBack();
-      addCard(this.props.deck, {question, answer})
+      addCard(this.props.deck, deck)
     }
   }
 
@@ -42,9 +43,9 @@ class AddCard extends React.Component {
     const {title} = this.props.navigation.state.params;
 
     return (
-      <View style={{flex: 1}}>
-        <View style={{flex: 1, padding: 20}}>
-          <View style={styles.card}>
+      <TouchableWithoutFeedback  onPress={Keyboard.dismiss} accessible={false}>
+        <View style={[styles.fill,{padding: 20}]}>
+          <KeyboardAvoidingView behavior={'padding'} style={styles.card}>
             <List renderHeader={() => `Add Card for the ${title}`}>
               <TextareaItem placeholder="input the Question" clear rows={2}
               value={question} onChange={val => this.handleInput('question', val)}/>
@@ -52,30 +53,24 @@ class AddCard extends React.Component {
               value={answer} onChange={val => this.handleInput('answer', val)}/>
             </List>
             <Button onClick={this.submit} type="primary">Submit</Button>
-          </View>
+          </KeyboardAvoidingView>
         </View>
-        <View style={{flex: 1}}>
-          
-        </View>
-      </View>
+      </TouchableWithoutFeedback>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  fill: {
+    flex: 1
+  },
   card: {
     flex: 1,
-    padding: 20,
-    backgroundColor: white,
+    width: '100%',
+    paddingHorizontal: 20,
+    paddingTop: 20,
     borderRadius: Platform.OS === 'ios' ? 16 : 2,
     justifyContent: 'space-around',
-    shadowRadius: 3,
-    shadowOpacity: 0.8,
-    shadowColor: 'rgba(0,0,0,0.24)',
-    shadowOffset:{
-      width: 0,
-      height: 3
-    }
   }
 })
 

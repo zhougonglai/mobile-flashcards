@@ -5,8 +5,12 @@ import {Provider} from 'react-redux';
 
 import reducer from './src/reducers';
 import RootStackNavigator from './src/navgation/RootNavigation';
+import { setNotification } from './src/utils/api';
 
 export default class App extends React.Component {
+  componentDidMount() {
+    setNotification();
+  }
   
   render() {
     return (
